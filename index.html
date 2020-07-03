@@ -113,8 +113,6 @@ const countdown = setInterval(() => {
   h.innerHTML = getTrueNumber(hours)+"时";
   m.innerHTML = getTrueNumber(mins)+"分";
   s.innerHTML = getTrueNumber(secs)+"秒";
-
-  if (x <= 0) clearInterval(x);
 }, 1000);
 const getTrueNumber = x => (x < 10 ? "0" + x : x);
 	

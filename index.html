@@ -68,9 +68,9 @@ $(document).ready(function(){
 		var layer = layui.layer,form = layui.form;
 	});
 	var url = location.search; //获取url中"?"符后的字串
-	var num=url.indexOf("?")
-	if ( num!= -1) {
-		var str = url.substr(url.indexOf("="));
+	
+	if ( url.indexOf("?")!= -1) {
+		var str = url.substr(5);
 		if (str!=""){
 			$('#player').attr('src', a[0].split(",")[1] + str)
 		};

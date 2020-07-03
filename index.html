@@ -70,7 +70,7 @@ $(document).ready(function(){
 	var url = location.search; //获取url中"?"符后的字串
 	
 	if ( url.indexOf("?")!= -1) {
-		var str = url.substr(5);
+		var str = url.substr(url.indexOf("="));
 		if (str!=""){
 			$('#player').attr('src', a[0].split(",")[1] + str)
 		};

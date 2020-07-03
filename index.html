@@ -70,8 +70,8 @@ $(document).ready(function(){
 	var url = location.search; //获取url中"?"符后的字串
 	
 	if ( url.indexOf("?")!= -1) {
-		var str = url.substr(5);
-		if (str!=""){
+		var str = url.substr(url.indexOf("=")+1);
+		if (str!=""&&(str.indexOf("http")>=0)){
 			$('#player').attr('src', a[0].split(",")[1] + str);
 			document.getElementById("str").value=str;
 		};

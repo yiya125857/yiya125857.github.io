@@ -72,9 +72,10 @@ $(document).ready(function(){
 	if ( url.indexOf("?")!= -1) {
 		var str = url.substr(5);
 		if (str!=""){
-			$('#player').attr('src', a[0].split(",")[1] + str)
+			$('#player').attr('src', a[0].split(",")[1] + str);
+			document.getElementById("str").value=str;
 		};
-		document.getElementById("str").value=str;
+		
 	}
 	else{
 		layui.use(['layer', 'form'], function(){

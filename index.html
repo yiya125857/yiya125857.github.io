@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="layui-col-md8">
-				<input type="text" name="address" required  lay-verify="required"  placeholder="https://v.qq.com/x/cover/unhg39knn3fjkb7.html" autocomplete="off" class="layui-input">
+				<input type="text" name="address" required  lay-verify="required"  placeholder="https://v.qq.com/x/cover/unhg39knn3fjkb7.html" autocomplete="off" class="layui-input" id="str">
 			</div>
 			<div class="layui-col-md2">
 				<button type="button" class="layui-btn layui-btn-fluid">立即播放</button>
@@ -74,6 +74,7 @@ $(document).ready(function(){
 		if (str!=""){
 			$('#player').attr('src', a[0].split(",")[1] + str)
 		};
+		document.getElementById("str").value=str;
 	}
 	else{
 		layui.use(['layer', 'form'], function(){

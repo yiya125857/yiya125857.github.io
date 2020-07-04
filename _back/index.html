@@ -16,8 +16,8 @@
 </head>
 <body>
 <!-- 你的HTML代码 -->
-	<div align="center" style="color:#C0C0C0">
-		<a>已运行：</a><a id="d">00天</a><a id="h">00时</a><a id="m">00分</a><a id="s">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
+	<div align="center">
+		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
 	</div>
 	
 	<div class="layui-container">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="layui-col-md8">
-				<input type="text" name="address" required  lay-verify="required"  placeholder="https://v.qq.com/x/cover/unhg39knn3fjkb7.html" autocomplete="off" class="layui-input">
+				<input type="text" name="address" required  lay-verify="required"  placeholder="https://v.qq.com/x/cover/unhg39knn3fjkb7.html" autocomplete="off" class="layui-input" id="str">
 			</div>
 			<div class="layui-col-md2">
 				<button type="button" class="layui-btn layui-btn-fluid">立即播放</button>
@@ -68,11 +68,14 @@ $(document).ready(function(){
 		var layer = layui.layer,form = layui.form;
 	});
 	var url = location.search; //获取url中"?"符后的字串
-	if (url.indexOf("?") != -1) {
-		var str = url.substr(5);
-		if (str!=""){
-			$('#player').attr('src', a[0].split(",")[1] + str)
+	
+	if ( url.indexOf("?")!= -1) {
+		var str = url.substr(url.indexOf("=")+1);
+		if (str!=""&&(str.indexOf("http")>=0)){
+			$('#player').attr('src', a[0].split(",")[1] + str);
+			document.getElementById("str").value=str;
 		};
+		
 	}
 	else{
 		layui.use(['layer', 'form'], function(){
@@ -113,8 +116,6 @@ const countdown = setInterval(() => {
   h.innerHTML = getTrueNumber(hours)+"时";
   m.innerHTML = getTrueNumber(mins)+"分";
   s.innerHTML = getTrueNumber(secs)+"秒";
-
-  if (x <= 0) clearInterval(x);
 }, 1000);
 const getTrueNumber = x => (x < 10 ? "0" + x : x);
 	

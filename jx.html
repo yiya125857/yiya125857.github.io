@@ -1,0 +1,87 @@
+<!-- 静态程序，接口收集自网络，可自己添加，图片api也可自行替换-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>VIP二次视频解析</title>
+	<style>
+		.a{
+			padding:5px;
+		}
+		
+		#ck{
+			background-image: url('https://api.uomg.com/api/rand.img1?sort=美女&format=img');
+		    background-size: cover;
+		    background-position: center 0; 
+		    background-repeat: no-repeat;  
+		    background-attachment: fixed; 
+		    -webkit-background-size: cover;  
+		    -o-background-size: cover;  
+		    -moz-background-size: cover;  
+		    -ms-background-size: cover;
+		}
+	</style>
+  </head>
+    <body>
+	    <div class="container p-3">
+			<div class="alert alert-success" role="alert">
+			    使用方法：去视频平台把视频播放地址复制到输入框点击解析即可
+			</div>
+			<div class="card">
+			    <div class="card-body">
+					<div class="row">
+						<div class="col-4 a">
+							<select class="custom-select" id="jk">
+							    <option rel="nofollow" value="https://api.sigujx.com/?url=">1号VIP解析接口</option>
+                                <option rel="nofollow" value="https://api.tv920.com/vip/?url=">2号VIP解析接口</option>
+                                <option rel="nofollow" value="http://jx.598110.com/?url=">3号VIP解析接口</option>
+                                <option rel="nofollow" value="http://jsap.attakids.com/?url=">4号VIP解析接口</option>
+                                <option rel="nofollow" value="https://api.927jx.com/vip/jx.php?url=">5号VIP解析接口</option>
+                                <option rel="nofollow" value="http://cdn.yangju.vip/k/?url=">6号VIP解析接口</option>
+                                <option rel="nofollow" value="https://api.v6.chat/?url=">7号VIP解析接口</option>
+                                <option rel="nofollow" value="https://660e.com/?url=">8号VIP解析接口</option>
+                                <option rel="nofollow" value="https://api.78sy.cn/?url=">9号VIP解析接口</option>
+							</select>
+						</div>
+						<div class="col-8 a">
+							<div class="form-group">
+							    <input type="email" class="form-control" id="url" aria-describedby="emailHelp" placeholder="http://">
+							</div>
+						</div>
+						<div class="col-12 a">
+							<button class="btn btn-primary btn-block" onclick="jx()">解析</button>
+						</div>
+					</div>
+			    </div>
+		    </div>
+			<div class="card mt-3">
+				<div class="card-body">
+					<div class="embed-responsive embed-responsive-16by9">
+					  <iframe class="embed-responsive-item" src="" allowfullscreen id="ck"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="card mt-3">
+				<div class="card-body">
+					<p>友情链接：</p>
+					<a href="http://www.baidu.com" class="btn btn-primary">百度</a>
+				</div>
+			</div>
+	    </div>
+		<script>
+			function jx(){
+				var lj = document.getElementById("url").value;//获取输入框的视频链接
+				if(lj==""){
+					alert("输入为空，你解析个derder");
+				}else{
+					var xh=document.getElementById("jk").selectedIndex;//获取当前选项的序号
+					var jk = document.getElementsByTagName("option")[xh].value;//通过序号获取当前选项的接口
+					var url2 = jk+lj;//链接拼接
+					document.getElementById("ck").src=url2;//设置嵌入窗口的src地址为拼接后的地址
+				}
+			}
+		</script>
+    </body>
+</html>

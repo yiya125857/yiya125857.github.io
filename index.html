@@ -28,7 +28,7 @@
             	<div class="layui-form-item">
 			<div class="layui-col-md2">
 				<div class="layui-inline">
-					<select id="lb" lay-verify=""><!--解析列表-->
+					<select id="interface" lay-verify=""><!--解析列表-->
 						
 						       	<option value="0">接口1</option>
                     					<option value="1">接口2</option>
@@ -63,44 +63,21 @@
 <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 <script>
 $(document).ready(function(){
-	//解析地址
-	var a = ['解析,https://m3u8.zh188.net/20210508%60/playm3u8.php?url=','618G,https://jx.618g.com/?url='];
 
-	layui.use(['layer', 'form'], function(){
-		var layer = layui.layer,form = layui.form;
-	});
-	var url = location.search; //获取url中"?"符后的字串
-	
-	if ( url.indexOf("?")!= -1) {
-		var str = url.substr(url.indexOf("=")+1);
-		if (str!=""&&(str.indexOf("http")>=0)){
-			$('#player').attr('src', a[0].split(",")[1] + str);
-			document.getElementById("str").value=str;
-		};
-		
-	}
-	else{
-		layui.use(['layer', 'form'], function(){
-			var layer = layui.layer,form = layui.form;
-			layer.msg('请添加播放地址！');
-		});
-	}
-	$("button").click(function(){
-		var address = $('input[name="address"]').val();
-		var itemValue1 = $("#lb").val();
-		if(address!=""){
-			 if(itemValue1 == 0){
-            			$('#player').attr('src',"https://jx.618g.com/?url="+address);
-         		}else if(itemValue1 == 1){
-            	 		$('#player').attr('src',""+address);
-         		}else if(itemValue1 == 2){
-             			$('#player').attr('src',""+address);
-         		}
-		}
-		else{
-			$('#player').attr('src', 'https://jx.618g.com/?url=https://v.qq.com/x/cover/unhg39knn3fjkb7.html' )
-		}
-	});
+$("button").click(function(){
+      var address = $('input[name="address"]').val();
+      var itemValue1 = $("#interface").val();
+      if(address!=""){
+
+         if(itemValue1 == 0){
+             $('#player').attr('src',"https://m3u8.zh188.net/20210508%60/playm3u8.php?url="+address);
+         }else if(itemValue1 == 1){
+             $('#player').attr('src',"https://jx.618g.com/?url="+address);
+         }else if(itemValue1 == 2){
+             $('#player').attr('src',""+address);
+         }
+      };
+  });
 });
 	
 

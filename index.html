@@ -29,6 +29,10 @@
 			<div class="layui-col-md2">
 				<div class="layui-inline">
 					<select id="lb" lay-verify=""><!--解析列表-->
+						
+						       	<option value="0">接口1</option>
+                    					<option value="1">接口2</option>
+                    					<option value="2">接口3</option>
 					</select>
 				</div>
 			</div>
@@ -61,9 +65,7 @@
 $(document).ready(function(){
 	//解析地址
 	var a = ['解析,https://m3u8.zh188.net/20210508%60/playm3u8.php?url=','618G,https://jx.618g.com/?url='];
-	for (var i = 0; i < a.length; i++) {
-		$('#lb').append('<option  value='+ i +'>【' + a[i].split(",")[0] + '】</option>');
-	}
+
 	layui.use(['layer', 'form'], function(){
 		var layer = layui.layer,form = layui.form;
 	});
@@ -87,12 +89,16 @@ $(document).ready(function(){
 		var address = $('input[name="address"]').val();
 		var itemValue1 = $("#interface").val();
 		if(address!=""){
-			for (var i = 0; i < a.length; i++){
-				if(itemValue1 == i){$('#player').attr('src',a[i].split(",")[1] + address)};
-			};
+			 if(itemValue1 == 0){
+            			$('#player').attr('src',"https://jx.598110.com/?url="+address);
+         		}else if(itemValue1 == 1){
+            	 		$('#player').attr('src',"http://jx.du2.cc/?url="+address);
+         		}else if(itemValue1 == 2){
+             			$('#player').attr('src',"https://jx.618g.com/?url="+address);
+         		}
 		}
 		else{
-			$('#player').attr('src', a[itemValue1].split(",")[1]+'https://v.qq.com/x/cover/unhg39knn3fjkb7.html' )
+			$('#player').attr('src', 'https://jx.618g.com/?url=https://v.qq.com/x/cover/unhg39knn3fjkb7.html' )
 		}
 	});
 });

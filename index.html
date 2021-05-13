@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -28,10 +28,7 @@
             	<div class="layui-form-item">
 			<div class="layui-col-md2">
 				<div class="layui-inline">
-					<select id="interface" lay-verify=""><!--解析列表-->
-						
-						       	<option value="0">接口1</option>
-                    			
+					<select id="interface"><!--解析列表-->
 					</select>
 				</div>
 			</div>
@@ -62,17 +59,42 @@
 <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 <script>
 $(document).ready(function(){
-
-$("button").click(function(){
-      var address = $('input[name="address"]').val();
-      var itemValue1 = $("#interface").val();
-      if(address!=""){
-
-         if(itemValue1 == 0){
-             $('#player').attr('src',"https://m3u8.zh188.net/20210508%60/playm3u8.php?url="+address);
-      
-      };
-  });
+	//解析地址
+	var a = ["大师,https://jx.htv009.com/?url=","七星,https://jx.a5027.com/dphy/jx.php?url=","全网,https://www.zhongguogps.com/jiexi/?url=",'菜鸟,https://jiexi.bm6ig.cn/?url=','黑云,https://jiexi.380k.com/?url=','石云,https://jiexi.071811.cc/jx2.php?url=','思古,https://api.sigujx.com/?url=','517,http://cn.bjbanshan.cn/jiexi.php?url=','618G,https://jx.618g.com/?url=','OK,https://okjx.cc/?url=','888,http://vip.hao0606.com/?url=','40,https://jx40.net/url=','金桥,https://jqaaa.com/jx.php?url=','腾牛,https://www.tengniuyun.com/vip/?url=','8090,https://www.8090g.cn/jiexi/?url=','IDC,https://jx.idc126.net/jx/?url=','927,https://api.927jx.com/wab/?url=','拉车,https://jx.lache.me/cc/?url=','人人,https://vip.mpos.ren/v/?url='];
+	for (var i = 0; i < a.length; i++) {
+		$('#interface').append('<option  value='+ i +'>【' + a[i].split(",")[0] + '】</option>');
+	}
+	layui.use(['layer', 'form'], function(){
+		var layer = layui.layer,form = layui.form;
+	});
+	var url = location.search; //获取url中"?"符后的字串
+	
+	if ( url.indexOf("?")!= -1) {
+		var str = url.substr(url.indexOf("=")+1);
+		if (str!=""&&(str.indexOf("http")>=0)){
+			$('#player').attr('src', a[0].split(",")[1] + str);
+			document.getElementById("str").value=str;
+		};
+		
+	}
+	else{
+		layui.use(['layer', 'form'], function(){
+			var layer = layui.layer,form = layui.form;
+			layer.msg('请添加播放地址！');
+		});
+	}
+	$("button").click(function(){
+		var address = $('input[name="address"]').val();
+		var itemValue1 = $("#interface").val();
+		if(address!=""){
+			for (var i = 0; i < a.length; i++){
+				if(itemValue1 == i){$('#player').attr('src',a[i].split(",")[1] + address)};
+			};
+		}
+		else{
+			$('#player').attr('src', a[itemValue1].split(",")[1]+'https://v.qq.com/x/cover/unhg39knn3fjkb7.html' )
+		}
+	});
 });
 	
 

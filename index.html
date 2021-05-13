@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>VIP视频二次解析</title>
@@ -17,7 +17,7 @@
 <body>
 <!-- 你的HTML代码 -->
 	<div align="center">
-		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="https://jq.qq.com/?_wv=1027&k=QBUKUGFR">QQ交流群</a>
+		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
 	</div>
 	
 	<div class="layui-container">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="layui-col-md8">
-				<input type="text" name="address" required  lay-verify="required"  placeholder="斗罗大陆139" autocomplete="off" class="layui-input" id="str">
+				<input type="text" name="address" required  lay-verify="required"  placeholder="https://v.qq.com/x/cover/unhg39knn3fjkb7.html" autocomplete="off" class="layui-input" id="str">
 			</div>
 			<div class="layui-col-md2">
 				<button type="button" class="layui-btn layui-btn-fluid">立即播放</button>
@@ -47,12 +47,11 @@
 <!--视频-->
 	<br>
 		<div id="layui-row" style="height:64vh"><!--播放窗口-->
-			<iframe id="player" src="" width="100%" height="100%" allowtransparency="true" allowfullscreen="true" rameborder="0" scrolling="no" frameborder='0'></iframe>
+			<iframe  id="player" src="" width="100%" height="100%" allowTransparency="true"allowfullscreen="true"rameborder="0"scrolling="no"frameborder='0'></iframe>
         </div>
 	<br>
-	<div class="div_foot" align="center" style="color:white">支持<a style="color:white" href="https://v.qq.com/">腾讯</a>、<a style="color:white" href="https://www.youku.com/">优酷</a>、<a style="color:white" href="https://www.iqiyi.com/">爱奇艺</a>、等主流VIP视频解析!
-	<br>本站不存储任何链接，播放内容与本站无关，本站不承担任何责任，接口源于互联网，解析仅支持学习交流!
-	<br>Copyright © 2021 <a style="color:white" href="https://www.lanzoux.com/tp/iAeMbfby4ze"> 源码下载</a></div>
+	<div class="div_foot" align="center" style="color:white">支持腾讯、优酷、爱奇艺、等主流VIP视频解析!解析仅支持学习交流，勿用非法用途!本站不承担任何责任!
+	<br>Copyright © 2020   <a style="color:white" href="https://h125857.cn">  网址</a></div>
 
 	</div>
 
@@ -61,33 +60,7 @@
 <script>
 $(document).ready(function(){
 	//解析地址
-	var a = [
-		"思古,https://api.sigujx.com/?url=",
-		"全网,https://www.zhongguogps.com/jiexi/?url=",
-		"play,https://jx.rdhk.net/?v=",
-		"月亮,https://api.yueliangjx.com/?url=",
-		"高清,https://py.ha12.xyz/sos/index.php?url=",
-		"合集,https://z1.m1907.cn/?jx=",
-		"大师,https://jx.htv009.com/?url=",
-		"2A,https://www.2ajx.com/vip.php?url=",
-		"云,https://jx.mw0.cc/?url=",
-		"黑云,https://jiexi.380k.com/?url=",
-		"九八,https://jx.youyitv.com/?url=",
-		"TN,https://www.33tn.cn/?url=",
-		"OK,https://okjx.cc/?url=",
-		"IDC,https://jx.idc126.net/jx/?url=",
-		"52,https://vip.52jiexi.top/?url=",
-		"小狼,https://jx.dianyingguan.cn/?url=",
-		"ckmov,https://www.ckmov.vip/api.php?url=",
-		"菜鸟,https://jiexi.bm6ig.cn/?url=",
-		"618,https://jx.618g.com/?url=",
-		"8090,https://www.8090g.cn/jiexi/?url=",
-		"78,https://api.78sy.cn/?url=",
-		"小蒋,https://www.kpezp.cn/jlexi.php?url=",
-		"维多,https://jx.ivito.cn/?url=",
-		"888,http://vip.hao0606.com/?url=",
-		"全网,https://jx.elwtc.com/vip/?url="
-		];
+	var a = ["大师,https://jx.htv009.com/?url=","七星,https://jx.a5027.com/dphy/jx.php?url=","全网,https://www.zhongguogps.com/jiexi/?url=",'菜鸟,https://jiexi.bm6ig.cn/?url=','黑云,https://jiexi.380k.com/?url=','石云,https://jiexi.071811.cc/jx2.php?url=','思古,https://api.sigujx.com/?url=','517,http://cn.bjbanshan.cn/jiexi.php?url=','618G,https://jx.618g.com/?url=','OK,https://okjx.cc/?url=','888,http://vip.hao0606.com/?url=','40,https://jx40.net/url=','金桥,https://jqaaa.com/jx.php?url=','腾牛,https://www.tengniuyun.com/vip/?url=','8090,https://www.8090g.cn/jiexi/?url=','IDC,https://jx.idc126.net/jx/?url=','927,https://api.927jx.com/wab/?url=','拉车,https://jx.lache.me/cc/?url=','人人,https://vip.mpos.ren/v/?url='];
 	for (var i = 0; i < a.length; i++) {
 		$('#interface').append('<option  value='+ i +'>【' + a[i].split(",")[0] + '】</option>');
 	}
@@ -119,7 +92,7 @@ $(document).ready(function(){
 			};
 		}
 		else{
-			$('#player').attr('src', a[itemValue1].split(",")[1]+'https://v.qq.com/x/cover/m441e3rjq9kwpsc/j0035zknndh.html' )
+			$('#player').attr('src', a[itemValue1].split(",")[1]+'https://v.qq.com/x/cover/unhg39knn3fjkb7.html' )
 		}
 	});
 });

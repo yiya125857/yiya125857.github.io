@@ -50,15 +50,16 @@
 	</div>
 	<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 	<script>
-		var u = location.search; //获取url中"?"符后的字串
-		if ( u.indexOf("?")!= -1) {
-			var str = u.substr(u.indexOf("=")+1);
-			if (str!=""&&(str.indexOf("http")>=0)){	
-				document.getElementById("url").value=str;	
-			};
-			document.getElementById("ck").attr("src",document.getElementsByTagName("option")[0].value+str);
-		}
-
+		$(document).ready(function(){
+			var u = location.search; //获取url中"?"符后的字串
+			if ( u.indexOf("?")!= -1) {
+				var str = u.substr(u.indexOf("=")+1);
+				if (str!=""&&(str.indexOf("http")>=0)){	
+					document.getElementById("url").value=str;	
+				};
+				document.getElementById("ck").attr("src",document.getElementsByTagName("option")[0].value+str);
+			}
+		});
 		function jx(){
 			var lj = document.getElementById("url").value;//获取输入框的视频链接
 			if(lj==""){

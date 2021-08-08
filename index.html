@@ -59,7 +59,10 @@
 				if (str!=""&&(str.indexOf("http")>=0)){
 					
 					document.getElementById("url").value=str;
-					$('#ck').attr('src', document.getElementsById("jk").option.value + str);
+					var xh=document.getElementById("jk").selectedIndex;//获取当前选项的序号
+					var jk = document.getElementsByTagName("option")[xh].value;//通过序号获取当前选项的接口
+					var url2 = jk+str;//链接拼接
+					$('#ck').attr('src', url2 );
 				};
 
 			}else{

@@ -57,10 +57,9 @@
 			if ( url.indexOf("?")!= -1) {
 				var str = url.substr(url.indexOf("=")+1);
 				if (str!=""&&(str.indexOf("http")>=0)){	
-					document.getElementById("url").value=str;
-					document.getElementById("ck").attr("src",document.getElementsByTagName("option")[0].value+str);
+					document.getElementById("url").value=str;	
 				};
-
+				document.getElementById("ck").attr("src",document.getElementsByTagName("option")[0].value+str);
 			}
 			
 			function jx(){

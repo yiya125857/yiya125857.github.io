@@ -58,8 +58,7 @@
 				var str = url.substr(url.indexOf("=")+1);
 				if (str!=""&&(str.indexOf("http")>=0)){	
 					document.getElementById("url").value=str;
-					alert(document.getElementsByTagName("option")[0].value+str);
-					$('#ck').attr('src',document.getElementsByTagName("option")[0].value+str);
+					document.getElementById("ck").attr("src",document.getElementsByTagName("option")[0].value+str);
 				};
 
 			}

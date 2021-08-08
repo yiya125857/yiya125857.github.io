@@ -61,20 +61,19 @@
 					};
 					document.getElementById("ck").attr("src",document.getElementsByTagName("option")[0].value+str);
 				}
-			
-				function jx(){
-					var lj = document.getElementById("url").value;//获取输入框的视频链接
-					if(lj==""){
-						alert("空空如也");
-					}else{
-						var xh=document.getElementById("jk").selectedIndex;//获取当前选项的序号
-						var jk = document.getElementsByTagName("option")[xh].value;//通过序号获取当前选项的接口
-						var url2 = jk+lj;//链接拼接
-						document.getElementById("ck").src=url2;//设置嵌入窗口的src地址为拼接后的地址
-					}
-				}
 			});
-			
+			function jx(){
+				var lj = document.getElementById("url").value;//获取输入框的视频链接
+				if(lj==""){
+					alert("空空如也");
+				}else{
+					var xh=document.getElementById("jk").selectedIndex;//获取当前选项的序号
+					var jk = document.getElementsByTagName("option")[xh].value;//通过序号获取当前选项的接口
+					var url2 = jk+lj;//链接拼接
+					document.getElementById("ck").src=url2;//设置嵌入窗口的src地址为拼接后的地址
+				}
+			};
+
 			const comingdate = new Date("April 23, 2020 00:00:00");    //设置时间点
 
 			const d = document.getElementById("d");

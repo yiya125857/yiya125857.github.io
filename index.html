@@ -30,7 +30,7 @@
 					</select>
 				</div>
 				<div class="col-8 a">
-					<input type="email" class="form-control" id="url" aria-describedby="emailHelp" placeholder="http://">
+					<input type="email" class="form-control" id="url" placeholder="http://">
 				</div>
 				<div class="col-2 a">
 					<button class="btn btn-primary btn-block" onclick="jx()">解析</button>
@@ -59,7 +59,7 @@
 				if (str!=""&&(str.indexOf("http")>=0)){
 					
 					document.getElementById("url").value=str;
-					$('#ck').attr('src', document.getElementsByTagName("option")[document.getElementById("jk").selectedIndex].value + str);
+					$('#ck').attr('src', document.getElementsByTagName("option")[0].value + str);
 				};
 
 			}

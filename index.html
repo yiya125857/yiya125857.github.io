@@ -53,9 +53,9 @@
 		</div>
 		<script>
 			
-			var url = location.search; //获取url中"?"符后的字串
-			if ( url.indexOf("?")!= -1) {
-				var str = url.substr(url.indexOf("=")+1);
+			var u = location.search; //获取url中"?"符后的字串
+			if ( u.indexOf("?")!= -1) {
+				var str = u.substr(u.indexOf("=")+1);
 				if (str!=""&&(str.indexOf("http")>=0)){	
 					document.getElementById("url").value=str;	
 				};

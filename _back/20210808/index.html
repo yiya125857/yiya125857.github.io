@@ -1,0 +1,97 @@
+<!-- 静态程序，接口收集自网络，可自己添加，图片api也可自行替换-->
+<!doctype html>
+<html lang="en">
+<head>
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+	<title>VIP二次视频解析</title>
+	<style>
+		body{background:#000}
+		.layui-col-md2{text-align:center;}
+	</style>
+</head>
+<body>
+	<div align="center">
+		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
+	</div>
+    	<div class="container p-3">
+		<div class="row">
+			<div class="col-2 a">
+				<select class="custom-select" id="jk">
+					<option rel="nofollow" value="https://17kyun.com/jx.php?url=">17K云</option>
+					<option rel="nofollow" value="https://9kjx.com/?url=">9看</option>
+					<option rel="nofollow" value="https://660e.com/?url=">乐乐云</option>
+					<option rel="nofollow" value="http://jx.4080jx.cc/?url=">4080</option>
+					<option rel="nofollow" value="https://www.xymav.com/?url=">七彩</option>
+					<option rel="nofollow" value="https://okjx.cc/?url=">OK</option>
+				</select>
+			</div>
+			<div class="col-8 a">
+				<input  class="form-control" id="url" placeholder="http://">
+			</div>
+			<div class="col-2 a">
+				<button class="btn btn-primary btn-block" onclick="jx()">解析</button>
+			</div>
+		</div>
+		
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe  id="ck" src="" width="100%" height="100%" allowTransparency="true"allowfullscreen="true"rameborder="0"scrolling="no"frameborder='0'></iframe>
+		</div>
+	</div>
+	<div class="div_foot" align="center" style="color:white">
+		<a href="https://v.qq.com/" style="color:white">腾讯</a>
+		<a href="https://www.iqiyi.com/" style="color:white">奇艺</a>
+		<a href="https://www.youku.com/" style="color:white">优酷</a>
+		<a href="https://www.mgtv.com/" style="color:white">芒果</a>、等主流VIP视频解析!解析仅支持学习交流，勿用非法用途!本站不承担任何责任!
+		<br>Copyright © 2021   <a style="color:white" href="https://h125857.cn">  网址</a></div>
+	</div>
+	<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var u = location.search; //获取url中"?"符后的字串
+			if ( u.indexOf("?")!= -1) {
+				var str = u.substr(u.indexOf("=")+1);
+				if (str!=""&&(str.indexOf("http")>=0)){	
+					$("#ck").attr("src",document.getElementsByTagName("option")[0].value+str);
+					document.getElementById("url").value=str;	
+				};
+				
+			}
+		});
+		function jx(){
+			var lj = document.getElementById("url").value;//获取输入框的视频链接
+			if(lj==""){
+				alert("空空如也");
+			}else{
+				var xh=document.getElementById("jk").selectedIndex;//获取当前选项的序号
+				var jk = document.getElementsByTagName("option")[xh].value;//通过序号获取当前选项的接口
+				var url2 = jk+lj;//链接拼接
+				document.getElementById("ck").src=url2;//设置嵌入窗口的src地址为拼接后的地址
+			}
+		};
+
+		const comingdate = new Date("April 23, 2020 00:00:00");    //设置时间点
+
+		const d = document.getElementById("d");
+		const h = document.getElementById("h");
+		const m = document.getElementById("m");
+		const s = document.getElementById("s");
+
+		const countdown = setInterval(() => {
+			const des   = new Date().getTime()-comingdate.getTime();
+			const days  = Math.floor(des / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((des % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const mins  = Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
+			const secs  = Math.floor((des % (1000 * 60)) / 1000);
+			d.innerHTML = getTrueNumber(days)+"天";
+			h.innerHTML = getTrueNumber(hours)+"时";
+			m.innerHTML = getTrueNumber(mins)+"分";
+			s.innerHTML = getTrueNumber(secs)+"秒";
+		}, 1000);
+		const getTrueNumber = x => (x < 10 ? "0" + x : x);
+	</script>
+</body>
+</html>

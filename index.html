@@ -58,8 +58,7 @@
 				var str = url.substr(url.indexOf("=")+1);
 				if (str!=""&&(str.indexOf("http")>=0)){	
 					document.getElementById("url").value=str;
-					var jk = document.getElementsByTagName("option")[0].value;//通过序号获取当前选项的接口
-					$('#ck').attr('src',"https://17kyun.com/jx.php?url="+str);
+					$('#ck').attr('src',document.getElementsByTagName("option")[0].value+str);
 				};
 
 			}

@@ -62,43 +62,10 @@
 		<a style="color:white" href="https://h125857.cn">  网址</a>
 			
 	</div>
-	
-	<!-- 打赏代码begin -->
-		<div class="shang_box">
-			<a class="shang_close" href="javascript:void(0)" onClick="dashangToggle()" title="关闭" target="_self"><img src="zanzhu/close.jpg" alt="取消" /></a> <img class="shang_logo" src="zanzhu/logo.png" height="80" alt="菜刀" />
-			<div class="shang_tit">
-				<p>正在穷游路上的菜刀，感谢您的赞助，又可以多跑100公里...</p>
-			</div>
-			<div class="shang_payimg"> <img src="zanzhu/weipayimg.jpg" alt="扫码支持" title="扫一扫" /> </div>
-			<div class="pay_explain">长按识别/扫码二维码赞助一点</div>
-			<div class="shang_payselect">
-				<div class="pay_item" data-id="alipay"><span class="radiobox"></span><span class="pay_logo"><img src="alipay.jpg" alt="支付宝支付菜刀" /></span></div>
-				<div class="pay_item checked" data-id="weipay"><span class="radiobox"></span><span class="pay_logo"><img src="wechat.jpg" alt="微信支付赞助菜刀" /></span> </div>
-			</div>
-			<div class="shang_info">
-				<p>打开<span id="shang_pay_txt">微信</span>扫一扫，即可进行扫码赞助</p>
-				<p>©<a href="http://caidao.net" >老李菜刀</a></p>
-			</div>
-		</div>
 
 
 	<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 	
-	<script type="text/javascript">
-		$(function() {
-			$(".pay_item").click(function() {
-				$(this).addClass('checked').siblings('.pay_item').removeClass('checked');
-				var dataid = $(this).attr('data-id');
-				$(".shang_payimg img").attr("src", "zanzhu/" + dataid + "img.jpg");
-				$("#shang_pay_txt").text(dataid == "alipay" ? "支付宝" : "微信");
-			});
-		});
-
-		function dashangToggle() {
-			$(".hide_box").fadeToggle();
-			$(".shang_box").fadeToggle();
-		}
-	</script>
 	<script>
 		$(document).ready(function(){
 			var u = location.search; //获取url中"?"符后的字串

@@ -60,6 +60,10 @@
 			<img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/>
 		</a>
 		<a style="color:white" href="https://h125857.cn">  网址</a> <a style="color:red" href="zanzhu/weipayimg.jpg">  赞助</a>
+			<a href="javascript:void(0)" onMouseOut="hideImg()" onmouseover="showImg()">测试</a> 
+			<div id="wxImg" style="display:none;height:50px;back-ground:#f00;position:absolute;">
+			    <img src="zanzhu/weipayimg.jpg">
+			</div> 
 			
 	</div>
 
@@ -67,25 +71,14 @@
 	<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 
 	<script>
-		//定义加入收藏夹函数
-		function join_favorite(siteUrl, siteName){  
-			//捕获加入收藏过程中的异常      
-			try        {     
-		 	//判断浏览器是否支持document.all        
-			if(document.all){                     
-			//如果支持则用external方式加入收藏夹                      
-				window.external.addFavorite(siteUrl,siteName);               
-			}else if(window.sidebar){                     
-		  	//如果支持window.sidebar，则用下列方式加入收藏夹   
-
-				window.sidebar.addPanel(siteName, siteUrl,'');           
-				}               
-			}  
-		//处理异常     
-		 	catch (e)        {         
-		 	alert("加入收藏夹失败，请使用Ctrl+D快捷键进行添加操作!");    
-		  		}
+		//赞助
+		function showImg(){ 
+			document.getElementById("wxImg").style.display='block'; 
+		} 
+		function hideImg(){ 
+			document.getElementById("wxImg").style.display='none'; 
 		}
+		
 		$(document).ready(function(){
 			var u = location.search; //获取url中"?"符后的字串
 			if ( u.indexOf("?")!= -1) {

@@ -6,34 +6,46 @@
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<title>VIP二次视频解析</title>
 	<style>
 		body{background:#000}
 		.layui-col-md2{text-align:center;}
 	</style>
-</head>
+
 <body>
 	<div align="center">
 		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
+	
+	<a style="font-size:0;cursor:move;" href="javascript:(function(){window.open(&quot;https://okjx.cc/?url=&quot;+document.location.href)})()" onclick="alert('请把按钮拖动到书签栏');return false;">OK视频解析</a>
 	</div>
+	<form name=autof style='padding:0px; margin:0px;'>
     	<div class="container p-3">
 		<div class="row">
 			<div class="col-2 a">
 				<select class="custom-select" id="jk">
-					<option rel="nofollow" value="https://17kyun.com/jx.php?url=">17K云</option>
-					<option rel="nofollow" value="https://9kjx.com/?url=">9看</option>
-					<option rel="nofollow" value="https://660e.com/?url=">乐乐云</option>
-					<option rel="nofollow" value="http://jx.4080jx.cc/?url=">4080</option>
-					<option rel="nofollow" value="https://www.xymav.com/?url=">七彩</option>
-					<option rel="nofollow" value="https://okjx.cc/?url=">OK</option>
+					<option name="nofollow1" value="https://660e.com/?url=">660e</option>
+					<option name="nofollow2" value="https://jx.parwix.com:4433/player/?url=">parwix</option>
+					<option name="nofollow" value="https://9kjx.com/?url=">9kjx</option>
+					<option name="jiekou1" value="http://okjx.cc/?url=">okjx</option>
+					<option name="jiekou2" value="https://www.1717yun.com/jx/ty.php?url=">1717</option>
+					<option name="jiekou3" value="https://www.ckmov.vip/api.php?url=">ckmo</option>
+					<option name="jiekou4" value="https://z1.m1907.cn/?jx=">1907</option>
+					<option name="jiekou5" value="https://ckmov.ccyjjd.com/ckmov/?url=">ccyj</option>
+					<option name="jiekou6" value="http://v.znb.me/?url=">znb0</option>
+					<option name="jiekou7" value="https://123.1dior.cn/?url=">dior</option>
+					<option name="jiekou8" value="https://www.murl.us/?url=">murl</option>
+					<option name="jiekou9" value="https://www.h8jx.com/jiexi.php?url=">h8jx</option>
+					<option name="jiekou10" value="https://vip.fxw.la/m3u8/index.php?url=">fxw0</option>
+					<!--<option name="jiekou11" value="">直链</option> -->
+					
 				</select>
 			</div>
 			<div class="col-8 a">
 				<input  class="form-control" id="url" placeholder="http://">
 			</div>
 			<div class="col-2 a">
-				<button class="btn btn-primary btn-block" onclick="jx()">解析</button>
+				<button class="btn btn-primary btn-block" onclick="jx()">解</button>
 			</div>
 		</div>
 		
@@ -41,15 +53,57 @@
 			<iframe  id="ck" src="" width="100%" height="100%" allowTransparency="true"allowfullscreen="true"rameborder="0"scrolling="no"frameborder='0'></iframe>
 		</div>
 	</div>
-	<div class="div_foot" align="center" style="color:white">
+	<div class="div_foot" align="center" style="color:white;z-index:1">
 		<a href="https://v.qq.com/" style="color:white">腾讯</a>
 		<a href="https://www.iqiyi.com/" style="color:white">奇艺</a>
 		<a href="https://www.youku.com/" style="color:white">优酷</a>
 		<a href="https://www.mgtv.com/" style="color:white">芒果</a>、等主流VIP视频解析!解析仅支持学习交流，勿用非法用途!本站不承担任何责任!
-		<br>Copyright © 2021   <a style="color:white" href="https://h125857.cn">  网址</a></div>
+		<br>Copyright © 2022 
+		<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=l_7_--b4--b4yKalpNfm5rn0_Po" style="text-decoration:none;">
+			<img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/>
+		</a>
+		<a style="color:white" href="https://h125857.cn">  网址</a>
+		<a style="color:red" href="javascript:window.open('https://h125857.cn/zanzhu/weipayimg.jpg')"> 赞助</a> 
+
+		
+	
 	</div>
+
 	<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+
 	<script>
+		tim=1
+		setInterval("tim++",1)
+		b=0
+		var ar = document.getElementsByTagName('option'),autourl = [];
+		
+		for(var i = 0;i<ar.length;i++){
+			//mc.push(ar[i].innerHTML)
+			autourl.push(ar[i].value)
+		}
+
+
+		
+		function auto(url){
+			
+			//document.forms[0]["url"+b].value=url
+		
+			if(tim>160){
+				document.forms[0]["txt"+b].value="[∞]"+url.split("//")[1].split("/")[0]
+			}
+			else{
+				document.forms[0]["txt"+b].value="["+tim+"]"+url.split("//")[1].split("/")[0]
+			}
+			b++
+		}
+		function run(){
+			for (var i = 0; i < autourl.length; i++){document.write("<input type=text name=txt" + i + " size=15 style='color:#999;' value=测试中…><br>")}		
+			for(var i=0;i<autourl.length;i++){document.write("<img src="+autourl[i]+"/"+Math.random()+" width=1 height=1 onerror=auto('"+autourl[i]+"') style='display:none'>")}
+		}
+		
+		run()
+		
+		
 		$(document).ready(function(){
 			var u = location.search; //获取url中"?"符后的字串
 			if ( u.indexOf("?")!= -1) {

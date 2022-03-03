@@ -12,31 +12,33 @@
 		body{background:#000}
 		.layui-col-md2{text-align:center;}
 	</style>
-</head>
-	
+
 <body>
 	<div align="center">
 		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
-	<a href="">收藏</a>
+	
+	<a style="font-size:0;cursor:move;" href="javascript:(function(){window.open(&quot;https://okjx.cc/?url=&quot;+document.location.href)})()" onclick="alert('请把按钮拖动到书签栏');return false;">OK视频解析</a>
 	</div>
+	<form name=autof style='padding:0px; margin:0px;'>
     	<div class="container p-3">
 		<div class="row">
 			<div class="col-2 a">
 				<select class="custom-select" id="jk">
-					<option rel="nofollow" value="https://660e.com/?url=">乐乐云</option>
-					<option rel="nofollow" value="https://jx.parwix.com:4433/player/?url=">parwix</option>
-					<option rel="nofollow" value="https://9kjx.com/?url=">9看</option>
-					<option name="jiekou1" value="http://okjx.cc/?url=">线路①</option>
-					<option name="jiekou2" value="https://www.1717yun.com/jx/ty.php?url=">线路②</option>
-					<option name="jiekou3" value="https://www.ckmov.vip/api.php?url=">线路③</option>
-					<option name="jiekou4" value="https://z1.m1907.cn/?jx=">线路④</option>
-					<option name="jiekou5" value="https://ckmov.ccyjjd.com/ckmov/?url=">线路⑤</option>
-					<option name="jiekou6" value="http://v.znb.me/?url=">线路⑥</option>
-					<option name="jiekou7" value="https://123.1dior.cn/?url=">线路⑦</option>
-					<option name="jiekou8" value="https://www.murl.us/?url=">线路⑧</option>
-					<option name="jiekou9" value="https://www.h8jx.com/jiexi.php?url=">线路⑨</option>
-					<option name="jiekou10" value="https://vip.fxw.la/m3u8/index.php?url=">m3u8解析</option>
-					<option name="jiekou11" value="">直链</option>
+					<option name="nofollow1" value="https://660e.com/?url=">660e</option>
+					<option name="nofollow2" value="https://jx.parwix.com:4433/player/?url=">parwix</option>
+					<option name="nofollow" value="https://9kjx.com/?url=">9kjx</option>
+					<option name="jiekou1" value="http://okjx.cc/?url=">okjx</option>
+					<option name="jiekou2" value="https://www.1717yun.com/jx/ty.php?url=">1717</option>
+					<option name="jiekou3" value="https://www.ckmov.vip/api.php?url=">ckmo</option>
+					<option name="jiekou4" value="https://z1.m1907.cn/?jx=">1907</option>
+					<option name="jiekou5" value="https://ckmov.ccyjjd.com/ckmov/?url=">ccyj</option>
+					<option name="jiekou6" value="http://v.znb.me/?url=">znb0</option>
+					<option name="jiekou7" value="https://123.1dior.cn/?url=">dior</option>
+					<option name="jiekou8" value="https://www.murl.us/?url=">murl</option>
+					<option name="jiekou9" value="https://www.h8jx.com/jiexi.php?url=">h8jx</option>
+					<option name="jiekou10" value="https://vip.fxw.la/m3u8/index.php?url=">fxw0</option>
+					<!--<option name="jiekou11" value="">直链</option> -->
+					
 				</select>
 			</div>
 			<div class="col-8 a">
@@ -62,13 +64,46 @@
 		</a>
 		<a style="color:white" href="https://h125857.cn">  网址</a>
 		<a style="color:red" href="javascript:window.open('https://h125857.cn/zanzhu/weipayimg.jpg')"> 赞助</a> 
+
 		
+	
 	</div>
 
 	<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
 
 	<script>
-	
+		tim=1
+		setInterval("tim++",1)
+		b=0
+		var ar = document.getElementsByTagName('option'),autourl = [];
+		
+		for(var i = 0;i<ar.length;i++){
+			//mc.push(ar[i].innerHTML)
+			autourl.push(ar[i].value)
+		}
+
+
+		
+		function auto(url){
+			
+			//document.forms[0]["url"+b].value=url
+		
+			if(tim>160){
+				document.forms[0]["txt"+b].value="[∞]"+url.split("//")[1].split("/")[0]
+			}
+			else{
+				document.forms[0]["txt"+b].value="["+tim+"]"+url.split("//")[1].split("/")[0]
+			}
+			b++
+		}
+		function run(){
+			for (var i = 0; i < autourl.length; i++){document.write("<input type=text name=txt" + i + " size=15 style='color:#999;' value=测试中…><br>")}		
+			for(var i=0;i<autourl.length;i++){document.write("<img src="+autourl[i]+"/"+Math.random()+" width=1 height=1 onerror=auto('"+autourl[i]+"') style='display:none'>")}
+		}
+		
+		run()
+		
+		
 		$(document).ready(function(){
 			var u = location.search; //获取url中"?"符后的字串
 			if ( u.indexOf("?")!= -1) {

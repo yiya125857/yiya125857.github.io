@@ -15,11 +15,11 @@
 
 <body>
 	<div align="center">
-		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ群</a>
+		<a  style="color:white">已运行：</a><a id="d" style="color:white">00天</a><a id="h" style="color:white">00时</a><a id="m" style="color:white">00分</a><a id="s" style="color:white">00秒</a><a style="color:#FFFF00" href="http://url.cn/lrp9klnk">QQ交流群</a>
 	
-	<a href="javascript:window.open('http://yiya125857.github.io/?u='+document.location.href.split('?')[0],'_self')" title="拖拽到书签收藏使用，在视频页面点击！" onclick="alert('请把按钮拖动到书签栏');return false;">收藏</a>
+	<a href="javascript:(function(){window.open(&quot;https://okjx.cc/?url=&quot;+document.location.href)})()" title="拖拽到书签收藏使用，在视频页面点击！" onclick="alert('请把按钮拖动到书签栏');return false;">OK视频解析</a>
 	</div>
-	<form name=autof style='padding:0px; margin:0px;'>
+	
     	<div class="container p-3">
 		<div class="row">
 			<div class="col-2 a">
@@ -97,6 +97,7 @@
 			b++
 		}
 		function run(){
+			document.write("<form name=autof style='padding:0px; margin:0px;'>")
 			for (var i = 0; i < autourl.length; i++){document.write("<input type=text name=txt" + i + " size=15 style='color:#999;' value=测试中…><br>")}		
 			for(var i=0;i<autourl.length;i++){document.write("<img src="+autourl[i]+"/"+Math.random()+" width=1 height=1 onerror=auto('"+autourl[i]+"') style='display:none'>")}
 		}

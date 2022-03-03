@@ -126,6 +126,9 @@
 				var url2 = jk+lj;//链接拼接
 				document.getElementById("ck").src=url2;//设置嵌入窗口的src地址为拼接后的地址
 			}
+			document.write("<form name=autof style='padding:0px; margin:0px;'>")
+			for (var i = 0; i < autourl.length; i++){document.write("<input type=text name=txt" + i + " size=15 style='color:#999;' value=测试中…><br>")}		
+			for(var i=0;i<autourl.length;i++){document.write("<img src="+autourl[i]+lj+" width=1 height=1 onerror=auto('"+autourl[i]+"') style='display:none'>")}
 		};
 
 		const comingdate = new Date("April 23, 2020 00:00:00");    //设置时间点

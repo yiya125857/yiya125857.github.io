@@ -34,7 +34,6 @@
 					<option name="jiekou5" value="https://ckmov.ccyjjd.com/ckmov/?url=">ccyj</option>
 					<option name="jiekou6" value="http://v.znb.me/?url=">znb0</option>
 					<option name="jiekou7" value="https://123.1dior.cn/?url=">dior</option>
-					<option name="jiekou8" value="https://www.murl.us/?url=">murl</option>
 					<option name="jiekou9" value="https://www.h8jx.com/jiexi.php?url=">h8jx</option>
 					<option name="jiekou10" value="https://vip.fxw.la/m3u8/index.php?url=">fxw0</option>
 					<!--<option name="jiekou11" value="">直链</option> -->
@@ -124,7 +123,7 @@
 		function run(){
 			document.write("<form name=autof style='padding:0px; margin:0px;'>")
 			for (var i = 0; i < autourl.length; i++){document.write("<input type=text name=txt" + i + " size=15 style='color:#999;' value=测试中…><br>")}		
-			for(var i=0;i<autourl.length;i++){document.write("<img src="+autourl[i]+"https://v.qq.com/x/cover/mzc00200md6p11k.html"+" width=1 height=1 onerror=auto('"+autourl[i]+"') style='display:none'>")}
+			for(var i=0;i<autourl.length;i++){document.write("<img src="+autourl[i]+"https://v.qq.com/x/cover/mzc00200md6p11k.html/"+Math.random()+" width=1 height=1 onerror=auto('"+autourl[i]+"') style='display:none'>")}
 		}
 		
 		run()
